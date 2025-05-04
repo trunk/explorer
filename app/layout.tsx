@@ -15,31 +15,31 @@ const SearchBar = dynamic(() => import('@components/SearchBar'), {
 });
 
 export const metadata: Metadata = {
-    title: "Explorer | Trunk",
     description: "Inspect transactions, accounts, blocks, and more on the Trunk SVM",
     manifest: '/manifest.json',
     openGraph: {
-        title: "Explorer | Trunk",
         description: "Inspect transactions, accounts, blocks, and more on the Trunk SVM",
-        url: "https://explorer.trunk.com",
-        type: "website",
         images: [
             {
+                alt: "Explorer | Trunk",
+                height: 666,
                 url: "https://opengraph.b-cdn.net/production/images/eed3bbd5-d967-4fd1-b72f-62d8cb946791.png?token=XYfioeGZ7xf1RGMUGxfRv9heP27zOVaQlCUe40bXwWA&height=666&width=1200&expires=33282374544",
                 width: 1200,
-                height: 666,
-                alt: "Explorer | Trunk",
             },
         ],
+        title: "Explorer | Trunk",
+        type: "website",
+        url: "https://explorer.trunk.com",
     },
+    title: "Explorer | Trunk",
     twitter: {
         card: "summary_large_image",
-        title: "Explorer | Trunk",
         description: "Inspect transactions, accounts, blocks, and more on the Trunk SVM",
         images: [
             "https://opengraph.b-cdn.net/production/images/eed3bbd5-d967-4fd1-b72f-62d8cb946791.png?token=XYfioeGZ7xf1RGMUGxfRv9heP27zOVaQlCUe40bXwWA&height=666&width=1200&expires=33282374544"
         ],
-        site: "explorer.trunk.com"
+        site: "explorer.trunk.com",
+        title: "Explorer | Trunk"
     }
 };
 
