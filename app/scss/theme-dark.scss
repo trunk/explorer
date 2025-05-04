@@ -1,0 +1,73 @@
+/**
+ * Dashkit
+ *
+ * Custom variables followed by Dashkit variables followed by Bootstrap variables
+ * to ensure cascade of styles.
+ */
+
+$path-to-img: '/img/dashkit' !default;
+
+
+
+// Bootstrap functions
+@import '~bootstrap/scss/functions';
+
+// Custom variables
+@import 'solana-variables-dark';
+
+// Custom variables
+@import 'solana-variables';
+
+// Dark mode variables
+@import 'dashkit/dark/variables-dark';
+
+// Dashkit variables
+@import 'dashkit/variables';
+
+// Bootstrap core
+@import '~bootstrap/scss/bootstrap';
+
+// Dashkit core
+@import 'dashkit/theme';
+
+// Dark mode overrides
+@import 'dashkit/dark/overrides-dark';
+
+// Custom core
+@import 'solana';
+
+// Dark mode overrides
+@import 'solana-dark-overrides';
+
+
+
+body {
+    color: black;
+}
+
+.table {
+    color:black;
+}
+
+.table tr:not(:last-child) {
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: #0000001e;
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+    }
+}
+
+
+.card-header {
+    border:0;
+}
+
+.container {
+    border-radius: 20px;
+}
