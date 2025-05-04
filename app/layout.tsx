@@ -15,9 +15,32 @@ const SearchBar = dynamic(() => import('@components/SearchBar'), {
 });
 
 export const metadata: Metadata = {
-    description: 'Inspect transactions, accounts, blocks, and more on the Trunk SVM',
+    title: "Explorer | Trunk",
+    description: "Inspect transactions, accounts, blocks, and more on the Trunk SVM",
     manifest: '/manifest.json',
-    title: 'Explorer | Trunk',
+    openGraph: {
+        title: "Explorer | Trunk",
+        description: "Inspect transactions, accounts, blocks, and more on the Trunk SVM",
+        url: "https://explorer.trunk.com",
+        type: "website",
+        images: [
+            {
+                url: "https://opengraph.b-cdn.net/production/images/eed3bbd5-d967-4fd1-b72f-62d8cb946791.png?token=XYfioeGZ7xf1RGMUGxfRv9heP27zOVaQlCUe40bXwWA&height=666&width=1200&expires=33282374544",
+                width: 1200,
+                height: 666,
+                alt: "Explorer | Trunk",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Explorer | Trunk",
+        description: "Inspect transactions, accounts, blocks, and more on the Trunk SVM",
+        images: [
+            "https://opengraph.b-cdn.net/production/images/eed3bbd5-d967-4fd1-b72f-62d8cb946791.png?token=XYfioeGZ7xf1RGMUGxfRv9heP27zOVaQlCUe40bXwWA&height=666&width=1200&expires=33282374544"
+        ],
+        site: "explorer.trunk.com"
+    }
 };
 
 export const viewport: Viewport = {
@@ -44,19 +67,6 @@ export default function RootLayout({
         <html lang="en" className={`${rubikFont.variable}`}>
             <head>
                 <meta name="description" content="Inspect transactions, accounts, blocks, and more on the Trunk SVM" />
-                <meta property="og:url" content="https://explorer.trunk.com" />
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Explorer | Trunk" />
-                <meta property="og:description" content="Inspect transactions, accounts, blocks, and more on the Trunk SVM" />
-                <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/eed3bbd5-d967-4fd1-b72f-62d8cb946791.png?token=XYfioeGZ7xf1RGMUGxfRv9heP27zOVaQlCUe40bXwWA&height=666&width=1200&expires=33282374544" />
-
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta property="twitter:domain" content="explorer.trunk.com" />
-                <meta property="twitter:url" content="https://explorer.trunk.com" />
-                <meta name="twitter:title" content="Explorer | Trunk" />
-                <meta name="twitter:description" content="Inspect transactions, accounts, blocks, and more on the Trunk SVM" />
-                <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/eed3bbd5-d967-4fd1-b72f-62d8cb946791.png?token=XYfioeGZ7xf1RGMUGxfRv9heP27zOVaQlCUe40bXwWA&height=666&width=1200&expires=33282374544" />
-
                 <link rel="icon" href="/favicon.png" type="image/png" />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
