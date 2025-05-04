@@ -43,10 +43,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${rubikFont.variable}`}>
             <head>
-                <meta property="og:title" content="Explorer | Trunk" />
-
-                <meta name="description" content="Inspect transactions, accounts, blocks, and more on the Trunk SVM">
-
+                <meta name="description" content="Inspect transactions, accounts, blocks, and more on the Trunk SVM" />
                 <meta property="og:url" content="https://explorer.trunk.com" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Explorer | Trunk" />
