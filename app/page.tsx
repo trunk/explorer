@@ -8,7 +8,6 @@ import { TableCardBody } from '@components/common/TableCardBody';
 import { TimestampToggle } from '@components/common/TimestampToggle';
 import { LiveTransactionStatsCard } from '@components/LiveTransactionStatsCard';
 import { StatsNotReady } from '@components/StatsNotReady';
-import { useVoteAccounts } from '@providers/accounts/vote-accounts';
 import { useCluster } from '@providers/cluster';
 import { StatsProvider } from '@providers/stats';
 import {
@@ -54,11 +53,9 @@ function StakingComponent() {
     const { status } = useCluster();
     const supply = useSupply();
     const fetchSupply = useFetchSupply();
-    const { fetchVoteAccounts, voteAccounts } = useVoteAccounts();
 
     function fetchData() {
         fetchSupply();
-        fetchVoteAccounts();
     }
 
     React.useEffect(() => {
@@ -66,21 +63,6 @@ function StakingComponent() {
             fetchData();
         }
     }, [status]); // eslint-disable-line react-hooks/exhaustive-deps
-
-    const delinquentStake = React.useMemo(() => {
-        if (voteAccounts) {
-            return voteAccounts.delinquent.reduce((prev, current) => prev + current.activatedStake, BigInt(0));
-        }
-    }, [voteAccounts]);
-
-    const activeStake = React.useMemo(() => {
-        if (voteAccounts && delinquentStake) {
-            return (
-                voteAccounts.current.reduce((prev, current) => prev + current.activatedStake, BigInt(0)) +
-                delinquentStake
-            );
-        }
-    }, [voteAccounts, delinquentStake]);
 
     if (supply === Status.Disconnected) {
         // we'll return here to prevent flicker
@@ -96,10 +78,6 @@ function StakingComponent() {
     // Calculate to 2dp for accuracy, then display as 1
     const circulatingPercentage = percentage(supply.circulating, supply.total, 2).toFixed(1);
 
-    let delinquentStakePercentage;
-    if (delinquentStake && activeStake) {
-        delinquentStakePercentage = percentage(delinquentStake, activeStake, 2).toFixed(1);
-    }
 
     return (
         <div className="row staking-card">

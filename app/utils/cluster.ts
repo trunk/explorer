@@ -46,6 +46,7 @@ export function clusterUrl(cluster: Cluster): string {
         if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
             return url;
         } else {
+            console.log(cluster);
             return url.replace('api', 'explorer-api');
         }
     };
